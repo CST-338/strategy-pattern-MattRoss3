@@ -13,8 +13,10 @@ public abstract class Monster {
         this.maxHP = maxHP;
         hp=this.maxHP;
     }
-    public String toString(){
-        return "Monster has : hp="+hp+"/"+maxHP;
+
+    @Override
+    public String toString() {
+        return  "hp="+hp+"/"+maxHP;
     }
 
     public Integer getHp() {
