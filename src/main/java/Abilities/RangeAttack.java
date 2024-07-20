@@ -8,9 +8,9 @@ public class RangeAttack implements Attack {
     public RangeAttack(Monster attacker) {
         this.attacker = attacker;
     }
-    public Integer attack(Monster monster){
-        String message= attacker+" uses a range attack on "+monster;
+    public Integer attack(Monster target){
+        String message= attacker+" uses a range attack on "+target;
         System.out.println(message);
-        return null;
+        return attacker.getAgi()-target.getAgi();
     }
 }

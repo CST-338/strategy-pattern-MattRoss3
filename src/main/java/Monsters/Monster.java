@@ -1,5 +1,7 @@
 package Monsters;
 
+
+
 import Abilities.Attack;
 
 import java.util.HashMap;
@@ -10,9 +12,9 @@ public abstract class  Monster {
     private Integer hp;
     private Integer xp=10;
     private Integer maxHP;
-    Integer agi;
-    Integer def;
-    Integer str;
+    Integer agi=10;
+    Integer def=10;
+    Integer str=10;
     Attack attack;
     private HashMap<String, Integer> items;
 
@@ -22,7 +24,7 @@ public abstract class  Monster {
         this.maxHP = maxHP;
         hp=this.maxHP;
     }
-    Integer getAttribute(Integer min, Integer max) {
+    public Integer getAttribute(Integer min, Integer max) {
         Random rand = new Random();
         if(min>max){
             Integer temp= min;
@@ -41,13 +43,15 @@ public abstract class  Monster {
             this.toString();
             return false;
         }
-        toString();
+        System.out.println(this);
         return true;
     }
-    Boolean attackTarget(Monster target){
-        return target.takeDamage(Attack.attack(target));
-
+    public Integer attackTarget(Monster target){
+        int damage=attack.attack(target);
+        target.takeDamage(damage);
+        return damage;
     }
+
     public Integer getStr() {
         return str;
     }

@@ -8,9 +8,9 @@ public class MeleeAttack implements Attack {
     public MeleeAttack(Monster attacker) {
         this.attacker = attacker;
     }
-    public Integer attack(Monster monster){
-        String message= attacker+" uses a melee attack on "+monster;
+    public Integer attack(Monster target){
+        String message= attacker+" uses a melee attack on "+target;
         System.out.println(message);
-        return null;
+        return attacker.getStr()-target.getDef();
     }
 }
