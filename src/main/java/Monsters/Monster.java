@@ -90,12 +90,12 @@ public abstract class  Monster {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Monster monster = (Monster) o;
-        return Objects.equals(getHp(), monster.getHp()) && Objects.equals(getXp(), monster.getXp()) && Objects.equals(getMaxHP(), monster.getMaxHP()) && Objects.equals(getItems(), monster.getItems());
+        return Objects.equals(getHp(), monster.getHp()) && Objects.equals(getXp(), monster.getXp()) && Objects.equals(getMaxHP(), monster.getMaxHP()) && Objects.equals(getAgi(), monster.getAgi()) && Objects.equals(getDef(), monster.getDef()) && Objects.equals(getStr(), monster.getStr()) && Objects.equals(attack, monster.attack) && Objects.equals(getItems(), monster.getItems());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getHp(), getXp(), getMaxHP(), getItems());
+        return Objects.hash(getHp(), getXp(), getMaxHP(), getAgi(), getDef(), getStr(), attack, getItems());
     }
 
     public void setHp(Integer hp) {
